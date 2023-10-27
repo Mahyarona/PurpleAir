@@ -1,1 +1,11 @@
+import requests
+# Mosquito Fire : -120.7447,39.00591
+url = "https://api.purpleair.com/v1/sensors"
 
+querystring = { "fields": "latitude,altitude,longitude", "location_type": "0", "nwlng": "-120.84", "nwlat": "39.1", "selng": "-120.64", "selat": "38.9" }
+
+headers = { "X-API-Key": "YOUR API KEY" }
+
+response = requests.get(url, headers=headers, params=querystring)
+
+print(response.text)
